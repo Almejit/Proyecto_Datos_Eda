@@ -23,7 +23,5 @@ def cargar_datos():
     
     return df
 
-df = cargar_datos()
-print(df.info())
-print(df.head())
+
 
