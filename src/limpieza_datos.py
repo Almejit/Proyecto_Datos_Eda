@@ -5,7 +5,7 @@ import seaborn as sns
 
 
 def detectar_outliers(df):
-
+#
     numerical_cols = df.select_dtypes(include=['number']).columns
 
     num_plots = len(numerical_cols)
