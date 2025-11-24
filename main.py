@@ -2,7 +2,7 @@ from src.carga_datos import cargar_datos
 from src.exploracion import explorar_datos
 from src.limpieza_datos import detectar_outliers, eliminar_outliers, tratar_valores_nulos
 from src.DefiniciónProblemas.DiseñoGráficos import iniciar_navegador
-
+from src.transformacion_datos import transformar_preparar_datos, preparar_para_ml
 
 def main():
    
@@ -30,6 +30,15 @@ def main():
         print("\n✅ Proceso completado. Visor cerrado.")
     except Exception as e:
         print(f"❌ Error al lanzar el visor: {e}")
+        
+    
+    df_transformed, scaler_std, scaler_minmax, le_type = transformar_preparar_datos(df)
+    
+    X_train, X_test, y_train, y_test = preparar_para_ml(df_transformed)
+    
+    print("\n\n🎯 Dataset listo para aplicar algoritmos de ML!")
+    print(f"Forma de X_train: {X_train.shape}")
+    print(f"Forma de y_train: {y_train.shape}")
 
 
 if __name__ == "__main__":
