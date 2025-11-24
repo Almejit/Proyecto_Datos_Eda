@@ -1,5 +1,6 @@
 from src.carga_datos import cargar_datos
-from src.exploracion import explorar_datos
+# ¡Importaciones Actualizadas para incluir las dos funciones del EDA avanzado!
+from src.exploracion import explorar_datos, analisis_eda, deteccion_patrones
 from src.limpieza_datos import detectar_outliers, eliminar_outliers, tratar_valores_nulos
 from src.DefiniciónProblemas.DiseñoGráficos import iniciar_navegador
 from src.transformacion_datos import transformar_preparar_datos, preparar_para_ml
@@ -22,6 +23,12 @@ def main():
 
     print("\n Tratando valores nulos...")
     df = tratar_valores_nulos(df)  
+    
+    # 5. LLAMADA AL ANÁLISIS EXPLORATORIO AVANZADO (EDA)
+    analisis_eda(df) 
+    
+    # 6. LLAMADA A LA DETECCIÓN DE PATRONES/CLUSTERING
+    deteccion_patrones(df) # <-- ¡Nuevo paso!
     
     print("\nLanzando Visor de Gráficos Interactivo...")
     

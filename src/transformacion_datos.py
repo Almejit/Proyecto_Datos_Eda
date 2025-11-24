@@ -107,7 +107,7 @@ def transformar_preparar_datos(df):
     
     
     # RESUMEN FINAL
-   =
+   
     print("\n\n" + "="*60)
     print("RESUMEN DE TRANSFORMACIONES")
     print("="*60)
