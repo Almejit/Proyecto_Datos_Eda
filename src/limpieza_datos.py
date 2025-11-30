@@ -3,6 +3,50 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+def preparar_datos_inicial(df):
+    
+    print("\n--- Preparación Inicial de Datos ---")
+    
+    df_preparado = df.copy()
+    
+    if 'Unnamed: 0' in df_preparado.columns:
+        df_preparado = df_preparado.iloc[:, 1:]
+        print("✓ Columna índice eliminada")
+    
+    
+    for col in ["Small Bags", "Large Bags", "XLarge Bags"]:
+        if col not in df_preparado.columns:
+            df_preparado[col] = 0
+            print(f"⚠️  Columna '{col}' creada con valor 0")
+    
+
+    df_preparado["total_bags"] = (
+        df_preparado["Small Bags"] +
+        df_preparado["Large Bags"] +
+        df_preparado["XLarge Bags"]
+    )
+    print("✓ Variable 'total_bags' creada")
+    
+   
+    columnas_numericas = ["4046", "4225", "4770", "total_bags"]
+    for col in columnas_numericas:
+        if col in df_preparado.columns:
+            df_preparado[col] = pd.to_numeric(df_preparado[col], errors="coerce").fillna(0)
+    
+    
+    df_preparado["total_volume"] = (
+        df_preparado["4046"] +
+        df_preparado["4225"] +
+        df_preparado["4770"] +
+        df_preparado["total_bags"]
+    )
+    print("✓ Variable 'total_volume' creada")
+    
+    print(f"✓ Preparación completada: {df_preparado.shape[0]} filas × {df_preparado.shape[1]} columnas")
+    
+    return df_preparado
+
+
 def detectar_outliers(df):
    
     print("--- Generando gráficos individuales de detección de outliers ---")

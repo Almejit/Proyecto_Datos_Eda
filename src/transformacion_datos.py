@@ -12,8 +12,7 @@ def transformar_preparar_datos(df):
     df_transformed = df.copy()
     
     
-    # 1. ESTANDARIZACIÓN / NORMALIZACIÓN
-
+    
     print("\n1. ESTANDARIZACIÓN Y NORMALIZACIÓN")
     print("-"*60)
     
@@ -42,7 +41,7 @@ def transformar_preparar_datos(df):
     print(f"  - Rango 4046_norm: [{df_transformed['4046_norm'].min():.2f}, {df_transformed['4046_norm'].max():.2f}]")
     
     
-    # 2. CODIFICACIÓN DE VARIABLES CATEGÓRICAS
+
     
     print("\n\n2. CODIFICACIÓN DE VARIABLES CATEGÓRICAS")
     print("-"*60)
@@ -100,14 +99,13 @@ def transformar_preparar_datos(df):
         labels=['Bajo', 'Medio', 'Alto', 'Premium']
     )
     print("✓ price_category: Categorización del precio en rangos")
-    
-    #Interacción tipo x precio
+  
     df_transformed['type_price_interaction'] = df_transformed['type_encoded'] * df_transformed['AveragePrice']
     print("✓ type_price_interaction: Interacción entre tipo y precio")
     
     
-    # RESUMEN FINAL
-   =
+    
+   
     print("\n\n" + "="*60)
     print("RESUMEN DE TRANSFORMACIONES")
     print("="*60)
@@ -115,7 +113,7 @@ def transformar_preparar_datos(df):
     print(f"Dimensiones transformadas: {df_transformed.shape}")
     print(f"Nuevas columnas agregadas: {df_transformed.shape[1] - df.shape[1]}")
     
-    # Mostrar algunas columnas nuevas
+    
     print("\n📊 Muestra de variables transformadas:")
     columnas_muestra = ['AveragePrice', 'AveragePrice_std', 'type', 'type_encoded', 
                         'bags_ratio', 'price_per_volume', 'price_category']
