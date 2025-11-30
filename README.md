@@ -305,6 +305,4 @@ Test: 3,319 muestras (20%)
   <strong>⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub ⭐</strong>
 </div>
 
----
 
-**Desarrollado con ❤️ y 🥑 | 2025**
