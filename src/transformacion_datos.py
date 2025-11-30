@@ -104,8 +104,8 @@ def transformar_preparar_datos(df):
     print("✓ type_price_interaction: Interacción entre tipo y precio")
     
     
-    
-   
+    # RESUMEN FINAL
+   =
     print("\n\n" + "="*60)
     print("RESUMEN DE TRANSFORMACIONES")
     print("="*60)
