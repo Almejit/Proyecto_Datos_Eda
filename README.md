@@ -1,7 +1,5 @@
 # 🥑 Análisis de Datos de Aguacates - EDA & Machine Learning
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 
 > **Análisis exploratorio completo y preparación de datos para modelos predictivos de precios de aguacates en Estados Unidos**
